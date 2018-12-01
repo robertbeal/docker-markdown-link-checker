@@ -1,0 +1,8 @@
+services:
+  - docker
+
+before_install:
+  - docker build -t robertbeal/markdown-link-checker .
+
+script:
+  - docker run --rm --read-only -t robertbeal/markdown-link-checker --help
